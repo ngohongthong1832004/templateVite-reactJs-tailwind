@@ -8,8 +8,8 @@ import { routes } from "../../routes/routes";
 // import { getItemLocalStorage } from "../../../utils/storage";
 import { FC, useCallback, useEffect, useRef, useState } from "react";
 
-export const Sidebar = forwardRef<HTMLDivElement>(() => {
-    const [user, setUser] = useState<any>({});
+export const Sidebar = forwardRef(() => {
+    const [user, setUser] = useState({});
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -67,7 +67,7 @@ export const Sidebar = forwardRef<HTMLDivElement>(() => {
             items={renderedSidebarMenu}
             className="!justify-center gap-10"
           />
-      </ConfigProvider>
+        </ConfigProvider>
       </div>
     )
 

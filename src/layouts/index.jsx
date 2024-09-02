@@ -10,13 +10,7 @@ import { LocalStorageKey } from "../constants";
 
 const { Content } = Layout;
 
-export default function AppLayout({
-  children,
-}) {
-
-  const [currentTheme] = useLocalStorage(LocalStorageKey.mode_theme, "");
-  const [navVisible, setNavVisible] = useState(false);
-
+export default function AppLayout({children}) {
   return (
     <div
       className="min-h-[100vh] relative"  
@@ -24,16 +18,13 @@ export default function AppLayout({
       <div
           className="fixed right-0 bottom-0 left-0 bg-white z-[45] border-t-2 border-[#ECF0F5]"
         >
-          {/* <Sidebar
-            navVisible={navVisible}
-          /> */}
+          <Sidebar />
       </div>
 
       <Layout>
         <Layout>
           <Content
             style={{
-              background: `${ currentTheme == "dark" ? "#263138" : "#DEDFE3"}`,
               overflow: "auto",
               marginBottom: "50px",
             }}

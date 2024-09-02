@@ -5,7 +5,7 @@ import { Navigate, Outlet } from "react-router-dom";
 export const ProtectedRoute = () => {
   const auth = useAuth();
 
-  if (!auth) return <Navigate to={{ pathname: PATH_LOGIN }} />;
+  // if (!auth) return <Navigate to={{ pathname: PATH_LOGIN }} />;
 
   return <Outlet />;
 };
