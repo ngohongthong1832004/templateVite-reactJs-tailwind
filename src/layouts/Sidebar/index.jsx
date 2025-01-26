@@ -4,8 +4,6 @@ import { forwardRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { PATH_HOME } from "../../routes/paths";
 import { routes } from "../../routes/routes";
-
-// import { getItemLocalStorage } from "../../../utils/storage";
 import { FC, useCallback, useEffect, useRef, useState } from "react";
 
 export const Sidebar = forwardRef(() => {
@@ -26,46 +24,17 @@ export const Sidebar = forwardRef(() => {
       }
     );
 
-    // const getUser = useCallback(async () => {
-    //   try {
-    //     const userInfo = getItemLocalStorage(LocalStorageKey.user);
-    //     setUser(userInfo);
-    //   } catch (e) {
-    //     console.log(e);
-    //   }
-    // }, []);
-
-    // useEffect(() => {
-    //   getUser();
-    // }, []);
-
     return (
       <div
         className="h-full"
       >
-        <ConfigProvider
-          theme={{
-            components : {
-              Menu : {
-                darkItemSelectedBg : "#F9423A",
-                horizontalItemHoverColor : "#F9423A",
-                itemSelectedColor	: "#F9423A",
-                horizontalItemSelectedColor : "#F9423A",
-                
-                },
-            },
-            token: {
-              colorPrimaryBorder : "#F9423A",
-            }
-          }}
-        >
+        <ConfigProvider>
           <Menu
-            theme="dark"
-            mode="horizontal"
+            mode="vertical"
             defaultOpenKeys={[PATH_HOME]}
             selectedKeys={[location.pathname, location.pathname.slice(1)]}
             items={renderedSidebarMenu}
-            className="!justify-center gap-10"
+            className=""
           />
         </ConfigProvider>
       </div>

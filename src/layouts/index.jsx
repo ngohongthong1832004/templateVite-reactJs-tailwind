@@ -16,23 +16,23 @@ export default function AppLayout({children}) {
       className="min-h-[100vh] relative"  
     >
       <div
-          className="fixed right-0 bottom-0 left-0 bg-white z-[45] border-t-2 border-[#ECF0F5]"
+          className="fixed w-[180px] left-0 top-0 bottom-0 bg-white z-[45] border-t-2 border-[#ECF0F5]"
         >
           <Sidebar />
       </div>
 
-      <Layout>
-        <Layout>
-          <Content
-            style={{
-              overflow: "auto",
-              marginBottom: "50px",
-            }}
-          >
-            <Outlet />
-            {children}
-          </Content>
-        </Layout>
+      <Layout
+        className="ml-[180px]"
+      >
+        <Content
+          style={{
+            overflow: "auto",
+            marginBottom: "50px",
+          }}
+        >
+          <Outlet />
+          {children}
+        </Content>
       </Layout>
     </div>
   );

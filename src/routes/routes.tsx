@@ -26,17 +26,17 @@ export const routes = [
     children : []
   },
   {
-    path: PATH_LOGIN,
-    name: "LOGIN",
-    element: <LoginPage />,
-    show: true,
-    children : []
-  },
-  {
     path: PATH_PROFILE,
     name: "PROFILE",
     element: <ProfilePage />,
     show: true,
+    children : []
+  },
+  {
+    path: PATH_LOGIN,
+    name: "LOGIN",
+    element: <LoginPage />,
+    show: false,
     children : []
   },
 ];
